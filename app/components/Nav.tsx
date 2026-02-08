@@ -10,7 +10,7 @@ export default function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/50 bg-white/80 backdrop-blur-xl dark:border-slate-800/50 dark:bg-gray-950/80">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <div className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <div className="flex h-10 w-10 items-center justify-center">
               <Image 
                 src="/mountlogo.png" 
@@ -23,7 +23,7 @@ export default function Nav() {
             <span className="text-xl font-bold tracking-tight text-gray-900 dark:text-white" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
               MountSync
             </span>
-          </div>
+          </a>
           
           <div className="hidden items-center gap-8 md:flex">
             {/* Features Dropdown */}

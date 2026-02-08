@@ -1,0 +1,228 @@
+import Nav from "../../components/Nav";
+import Footer from "../../components/Footer";
+
+export default function ProductSyncing() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-emerald-50 dark:from-gray-950 dark:via-green-950 dark:to-emerald-950">
+      <Nav />
+
+      {/* Hero Section */}
+      <section className="relative overflow-hidden pt-32 pb-20 px-6 lg:px-8">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-green-400/20 blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-emerald-400/20 blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-4 py-2 dark:border-green-800 dark:bg-green-950">
+              <span className="flex h-2 w-2">
+                <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+              </span>
+              <span className="text-sm font-semibold text-green-700 dark:text-green-300">One-Click Publishing</span>
+            </div>
+
+            <h1 className="mx-auto max-w-4xl text-5xl font-black tracking-tight text-gray-900 dark:text-white sm:text-6xl lg:text-7xl" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', lineHeight: '1.1' }}>
+              Product Syncing{' '}
+              <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                Across All Channels
+              </span>
+            </h1>
+
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+              Create once, publish everywhere. Sync product details, images, descriptions, and pricing across all your sales channels automatically.
+            </p>
+
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <button className="group relative overflow-hidden rounded-full bg-gradient-to-r from-green-600 to-emerald-600 px-8 py-4 text-base font-bold text-white shadow-2xl shadow-green-500/50 transition-all hover:shadow-green-500/60 hover:scale-105">
+                <span className="relative z-10">Start Free Trial</span>
+                <div className="absolute inset-0 -z-0 bg-gradient-to-r from-green-500 to-emerald-500 opacity-0 transition-opacity group-hover:opacity-100"></div>
+              </button>
+              <button className="rounded-full border-2 border-gray-300 bg-white px-8 py-4 text-base font-bold text-gray-900 transition-all hover:border-green-600 hover:bg-green-50 dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:hover:border-green-500 dark:hover:bg-gray-800">
+                Watch Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section className="bg-white py-20 px-6 dark:bg-gray-950 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black tracking-tight text-gray-900 dark:text-white lg:text-5xl">
+              The Product Management{' '}
+              <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                Challenge
+              </span>
+            </h2>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div className="rounded-2xl border-2 border-red-200 bg-red-50 p-8 dark:border-red-900 dark:bg-red-950/30">
+              <h3 className="mb-4 text-2xl font-bold text-red-900 dark:text-red-300">❌ Manual Product Management</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 dark:text-red-400">•</span>
+                  <span className="text-gray-700 dark:text-gray-300">Recreating products on every platform</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 dark:text-red-400">•</span>
+                  <span className="text-gray-700 dark:text-gray-300">Inconsistent product information across channels</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 dark:text-red-400">•</span>
+                  <span className="text-gray-700 dark:text-gray-300">Hours spent uploading images multiple times</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 dark:text-red-400">•</span>
+                  <span className="text-gray-700 dark:text-gray-300">Pricing errors and outdated descriptions</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 dark:text-red-400">•</span>
+                  <span className="text-gray-700 dark:text-gray-300">Delayed launches across platforms</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border-2 border-green-200 bg-green-50 p-8 dark:border-green-900 dark:bg-green-950/30">
+              <h3 className="mb-4 text-2xl font-bold text-green-900 dark:text-green-300">✅ With MountSync</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400">•</span>
+                  <span className="text-gray-700 dark:text-gray-300">Create once, publish to all channels instantly</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400">•</span>
+                  <span className="text-gray-700 dark:text-gray-300">Consistent, accurate product data everywhere</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400">•</span>
+                  <span className="text-gray-700 dark:text-gray-300">Automatic image and media synchronization</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400">•</span>
+                  <span className="text-gray-700 dark:text-gray-300">Unified pricing with channel-specific rules</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-600 dark:text-green-400">•</span>
+                  <span className="text-gray-700 dark:text-gray-300">Launch new products simultaneously everywhere</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Grid */}
+      <section className="bg-gradient-to-br from-green-50 to-emerald-50 py-20 px-6 dark:from-gray-900 dark:to-green-950 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black tracking-tight text-gray-900 dark:text-white lg:text-5xl">
+              Everything You Need
+            </h2>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: 'Master Catalog', description: 'Set one store as your product master and push to all others.', icon: '📚' },
+              { title: 'Variant Syncing', description: 'Sync sizes, colors, and all product variations automatically.', icon: '🎨' },
+              { title: 'Image Syncing', description: 'Upload images once and they appear on all platforms.', icon: '🖼️' },
+              { title: 'Price Rules', description: 'Set different prices per channel with markup/markdown rules.', icon: '💰' },
+              { title: 'SEO Optimization', description: 'Sync meta titles, descriptions, and keywords across stores.', icon: '🔍' },
+              { title: 'Category Mapping', description: 'Map product categories intelligently between platforms.', icon: '🗂️' }
+            ].map((feature, idx) => (
+              <div 
+                key={idx}
+                className="group rounded-2xl border border-gray-200 bg-white p-6 transition-all hover:border-green-300 hover:shadow-xl hover:scale-105 dark:border-gray-800 dark:bg-gray-900"
+              >
+                <div className="mb-4 text-4xl transition-transform group-hover:scale-110">
+                  {feature.icon}
+                </div>
+                <h3 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="bg-white py-20 px-6 dark:bg-gray-950 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black tracking-tight text-gray-900 dark:text-white lg:text-5xl">
+              Simple 3-Step Process
+            </h2>
+          </div>
+
+          <div className="grid gap-12 lg:grid-cols-3">
+            {[
+              {
+                step: '01',
+                title: 'Choose Master Store',
+                description: 'Select which store will be your main product catalog source.',
+                icon: '🎯'
+              },
+              {
+                step: '02',
+                title: 'Create Your Product',
+                description: 'Add product details, images, pricing, and variants once.',
+                icon: '✏️'
+              },
+              {
+                step: '03',
+                title: 'Auto-Publish',
+                description: 'Products automatically appear on all connected platforms.',
+                icon: '🚀'
+              }
+            ].map((step, idx) => (
+              <div key={idx} className="relative">
+                <div className="flex items-start gap-6">
+                  <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-green-600 to-emerald-600 text-2xl font-black text-white shadow-lg">
+                    {step.step}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 py-20 px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl font-black tracking-tight text-white lg:text-5xl">
+            Start Syncing Your Products Today
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-green-100">
+            Save hours every week and ensure product consistency across all your sales channels.
+          </p>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <button className="rounded-full bg-white px-8 py-4 text-base font-bold text-green-600 shadow-2xl transition-all hover:scale-105 hover:shadow-white/20">
+              Start Your Free 14-Day Trial
+            </button>
+            <button className="rounded-full border-2 border-white bg-transparent px-8 py-4 text-base font-bold text-white transition-all hover:bg-white hover:text-green-600">
+              Contact Sales
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}

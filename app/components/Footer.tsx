@@ -8,9 +8,9 @@ export default function Footer() {
               Features
             </h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">Inventory Syncing</a></li>
-              <li><a href="#" className="text-sm text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">Order Syncing</a></li>
-              <li><a href="#" className="text-sm text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">Product Syncing</a></li>
+              <li><a href="/features/inventory-syncing" className="text-sm text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">Inventory Syncing</a></li>
+              <li><a href="/features/order-syncing" className="text-sm text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">Order Syncing</a></li>
+              <li><a href="/features/product-syncing" className="text-sm text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">Product Syncing</a></li>
             </ul>
           </div>
           <div>
@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t border-gray-200 pt-8 text-center dark:border-gray-800">
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            © 2026 QuickSync. All rights reserved.
+            © 2026 MountSync. All rights reserved.
           </p>
         </div>
       </div>

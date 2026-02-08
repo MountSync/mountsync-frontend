@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Nav() {
   const [featuresOpen, setFeaturesOpen] = useState(false);
@@ -10,13 +11,17 @@ export default function Nav() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/50 bg-white/80 backdrop-blur-xl dark:border-slate-800/50 dark:bg-gray-950/80">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           <div className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600">
-              <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+            <div className="flex h-10 w-10 items-center justify-center">
+              <Image 
+                src="/mountlogo.png" 
+                alt="MountSync Logo" 
+                width={40} 
+                height={40}
+                className="object-contain"
+              />
             </div>
             <span className="text-xl font-bold tracking-tight text-gray-900 dark:text-white" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              QuickSync
+              MountSync
             </span>
           </div>
           
@@ -46,13 +51,13 @@ export default function Nav() {
                   onMouseEnter={() => setFeaturesOpen(true)}
                   onMouseLeave={() => setFeaturesOpen(false)}
                 >
-                  <a href="#inventory-syncing" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                  <a href="/features/inventory-syncing" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
                     Inventory Syncing
                   </a>
-                  <a href="#product-syncing" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                  <a href="/features/product-syncing" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
                     Product Syncing
                   </a>
-                  <a href="#order-syncing" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                  <a href="/features/order-syncing" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
                     Order Syncing
                   </a>
                 </div>

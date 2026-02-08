@@ -31,7 +31,7 @@ export default function ShopifyIntegration() {
             </h1>
 
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-              Connect your Shopify store with QuickSync and sync inventory, products, and orders in real-time across all your sales channels.
+              Connect your Shopify store with MountSync and sync inventory, products, and orders in real-time across all your sales channels.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -130,20 +130,20 @@ export default function ShopifyIntegration() {
             {[
               {
                 step: '01',
-                title: 'Install QuickSync App',
-                description: 'Install the QuickSync app from the Shopify App Store with one click.',
+                title: 'Install MountSync App',
+                description: 'Install the MountSync app from the Shopify App Store with one click.',
                 icon: '🔌'
               },
               {
                 step: '02',
                 title: 'Authorize Connection',
-                description: 'Grant QuickSync permission to access your Shopify store data securely.',
+                description: 'Grant MountSync permission to access your Shopify store data securely.',
                 icon: '🔐'
               },
               {
                 step: '03',
                 title: 'Configure & Sync',
-                description: 'Choose what to sync and let QuickSync handle the rest automatically.',
+                description: 'Choose what to sync and let MountSync handle the rest automatically.',
                 icon: '⚡'
               }
             ].map((step, idx) => (
@@ -174,7 +174,7 @@ export default function ShopifyIntegration() {
             Ready to Connect Your Shopify Store?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-green-100">
-            Join thousands of Shopify merchants who've automated their multichannel operations with QuickSync.
+            Join thousands of Shopify merchants who've automated their multichannel operations with MountSync.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <button className="rounded-full bg-white px-8 py-4 text-base font-bold text-green-600 shadow-2xl transition-all hover:scale-105 hover:shadow-white/20">

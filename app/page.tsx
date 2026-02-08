@@ -77,7 +77,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-400">
-              Every un-integrated platform costs you sales. QuickSync keeps everything in real-time.
+              Every un-integrated platform costs you sales. MountSync keeps everything in real-time.
             </p>
           </div>
 
@@ -179,7 +179,7 @@ export default function Home() {
               {
                 step: '03',
                 title: 'Automation takes over',
-                description: 'QuickSync runs in the background 24/7, keeping everything perfectly aligned in real-time.',
+                description: 'MountSync runs in the background 24/7, keeping everything perfectly aligned in real-time.',
                 icon: '🚀'
               }
             ].map((step, idx) => (

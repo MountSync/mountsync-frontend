@@ -31,7 +31,7 @@ export default function WooCommerceIntegration() {
             </h1>
 
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-              Connect your WooCommerce store with QuickSync and sync inventory, products, and orders in real-time across all your sales channels.
+              Connect your WooCommerce store with MountSync and sync inventory, products, and orders in real-time across all your sales channels.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -130,20 +130,20 @@ export default function WooCommerceIntegration() {
             {[
               {
                 step: '01',
-                title: 'Install QuickSync Plugin',
-                description: 'Install the QuickSync plugin from WordPress plugin directory or upload manually.',
+                title: 'Install MountSync Plugin',
+                description: 'Install the MountSync plugin from WordPress plugin directory or upload manually.',
                 icon: '🔌'
               },
               {
                 step: '02',
                 title: 'Enter API Credentials',
-                description: 'Configure your WooCommerce REST API keys in QuickSync settings.',
+                description: 'Configure your WooCommerce REST API keys in MountSync settings.',
                 icon: '🔐'
               },
               {
                 step: '03',
                 title: 'Start Syncing',
-                description: 'Choose what to sync and let QuickSync handle the rest automatically.',
+                description: 'Choose what to sync and let MountSync handle the rest automatically.',
                 icon: '⚡'
               }
             ].map((step, idx) => (
@@ -174,7 +174,7 @@ export default function WooCommerceIntegration() {
             Ready to Connect Your WooCommerce Store?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-purple-100">
-            Join thousands of WooCommerce merchants who've automated their multichannel operations with QuickSync.
+            Join thousands of WooCommerce merchants who've automated their multichannel operations with MountSync.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <button className="rounded-full bg-white px-8 py-4 text-base font-bold text-purple-600 shadow-2xl transition-all hover:scale-105 hover:shadow-white/20">

@@ -84,12 +84,16 @@ export default function Nav() {
                   onMouseEnter={() => setIntegrationsOpen(true)}
                   onMouseLeave={() => setIntegrationsOpen(false)}
                 >
-                  <a href="#amazon" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
-                    Amazon
-                  </a>
-                  <a href="#shopify" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                  <a href="/integrations/shopify" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
                     Shopify
                   </a>
+                  <a href="/integrations/woocommerce" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                    WooCommerce
+                  </a>
+                  {/* <a href="#amazon" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                    Amazon
+                  </a>
+                  
                   <a href="#etsy" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
                     Etsy
                   </a>
@@ -104,10 +108,8 @@ export default function Nav() {
                   </a>
                   <a href="#tiktok" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
                     TikTok
-                  </a>
-                  <a href="#woocommerce" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
-                    WooCommerce
-                  </a>
+                  </a> */}
+                  
                 </div>
               )}
             </div>

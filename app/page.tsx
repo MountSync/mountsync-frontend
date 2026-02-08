@@ -1,6 +1,12 @@
+'use client';
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [featuresOpen, setFeaturesOpen] = useState(false);
+  const [integrationsOpen, setIntegrationsOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-950 dark:via-blue-950 dark:to-indigo-950">
       {/* Header */}
@@ -18,17 +24,95 @@ export default function Home() {
           </div>
           
           <div className="hidden items-center gap-8 md:flex">
-            <a href="#features" className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
-              Features
-            </a>
-            <a href="#integrations" className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
-              Integrations
+            {/* Features Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setFeaturesOpen(true)}
+              onMouseLeave={() => setFeaturesOpen(false)}
+            >
+              <button className="flex items-center gap-1 text-sm font-medium text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+                Features
+                <svg 
+                  className={`h-4 w-4 transition-transform ${featuresOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {featuresOpen && (
+                <div className="absolute top-full left-0 mt-2 w-64 rounded-xl border border-gray-200 bg-white py-2 shadow-xl dark:border-gray-800 dark:bg-gray-900">
+                  <a href="#inventory-syncing" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                    Inventory Syncing
+                  </a>
+                  <a href="#product-syncing" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                    Product Syncing
+                  </a>
+                  <a href="#order-syncing" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                    Order Syncing
+                  </a>
+                </div>
+              )}
+            </div>
+
+            {/* Integrations Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIntegrationsOpen(true)}
+              onMouseLeave={() => setIntegrationsOpen(false)}
+            >
+              <button className="flex items-center gap-1 text-sm font-medium text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+                Integrations
+                <svg 
+                  className={`h-4 w-4 transition-transform ${integrationsOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {integrationsOpen && (
+                <div className="absolute top-full left-0 mt-2 w-64 rounded-xl border border-gray-200 bg-white py-2 shadow-xl dark:border-gray-800 dark:bg-gray-900">
+                  {/* <a href="#amazon" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                    Amazon
+                  </a> */}
+                  <a href="#shopify" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                    Shopify
+                  </a>
+                  {/* <a href="#etsy" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                    Etsy
+                  </a>
+                  <a href="#clover" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                    Clover
+                  </a>
+                  <a href="#square" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                    Square
+                  </a>
+                  <a href="#ebay" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                    eBay
+                  </a>
+                  <a href="#tiktok" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                    TikTok
+                  </a> */}
+                  <a href="#woocommerce" className="block px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                    WooCommerce
+                  </a>
+                </div>
+              )}
+            </div>
+
+            <a href="#blog" className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+              Blog
             </a>
             <a href="#pricing" className="text-sm font-medium text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
-              Pricing
+              Contact
             </a>
             <button className="rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition-all hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105">
-              Start Free Trial
+              Sign Up
             </button>
           </div>
         </nav>

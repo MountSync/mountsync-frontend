@@ -1,11 +1,29 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import DashboardSidebar from "../components/DashboardSidebar";
 import DashboardTopNav from "../components/DashboardTopNav";
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (status === "authenticated" && session?.user) {
+      // Store user data in localStorage
+      const userData = {
+        email: session.user.email,
+        name: session.user.name,
+        image: session.user.image,
+      };
+      localStorage.setItem('mountsync_user', JSON.stringify(userData));
+    } else if (status === "unauthenticated") {
+      router.push('/login');
+    }
+  }, [session, status, router]);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950">

@@ -2,11 +2,15 @@
 
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function SignUp() {
+  const { data: session, status } = useSession();
+  const router = useRouter();
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -19,6 +23,19 @@ export default function SignUp() {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  useEffect(() => {
+    if (status === 'authenticated' && session?.user) {
+      // Store user data in localStorage
+      const userData = {
+        name: session.user.name || 'User',
+        email: session.user.email || '',
+        image: session.user.image || ''
+      };
+      localStorage.setItem('user', JSON.stringify(userData));
+      router.push('/dashboard');
+    }
+  }, [session, status, router]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

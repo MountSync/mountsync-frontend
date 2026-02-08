@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Image from "next/image";
 
 interface DashboardSidebarProps {
@@ -8,6 +9,34 @@ interface DashboardSidebarProps {
 }
 
 export default function DashboardSidebar({ sidebarOpen, setSidebarOpen }: DashboardSidebarProps) {
+  const [userName, setUserName] = useState('John Doe');
+  const [userEmail, setUserEmail] = useState('john@example.com');
+  const [userInitials, setUserInitials] = useState('JD');
+  const [userImage, setUserImage] = useState('');
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('mountsync_user');
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      if (user.name) {
+        setUserName(user.name);
+        const initials = user.name
+          .split(' ')
+          .map((n: string) => n[0])
+          .join('')
+          .toUpperCase()
+          .slice(0, 2);
+        setUserInitials(initials);
+      }
+      if (user.email) {
+        setUserEmail(user.email);
+      }
+      if (user.image) {
+        setUserImage(user.image);
+      }
+    }
+  }, []);
+
   return (
     <>
       {/* Sidebar */}
@@ -75,12 +104,22 @@ export default function DashboardSidebar({ sidebarOpen, setSidebarOpen }: Dashbo
           {/* User Profile */}
           <div className="border-t border-gray-200 p-4 dark:border-gray-800">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-white font-semibold">
-                JD
-              </div>
+              {userImage ? (
+                <Image 
+                  src={userImage} 
+                  alt={userName}
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
+              ) : (
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-white font-semibold">
+                  {userInitials}
+                </div>
+              )}
               <div className="flex-1">
-                <p className="text-sm font-semibold text-gray-900 dark:text-white">John Doe</p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">john@example.com</p>
+                <p className="text-sm font-semibold text-gray-900 dark:text-white">{userName}</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">{userEmail}</p>
               </div>
             </div>
           </div>

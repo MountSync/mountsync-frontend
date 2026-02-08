@@ -2,11 +2,15 @@
 
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const { data: session, status } = useSession();
+  const router = useRouter();
+  
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -14,6 +18,25 @@ export default function Login() {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+
+  useEffect(() => {
+    // Only redirect if we have both authenticated session AND user chose to login
+    if (status === 'authenticated' && session?.user) {
+      // Store user data in localStorage
+      const userData = {
+        name: session.user.name || 'User',
+        email: session.user.email || '',
+        image: session.user.image || ''
+      };
+      localStorage.setItem('mountsync_user', JSON.stringify(userData));
+      
+      // Only redirect if coming from Google OAuth (will have returnUrl or callback)
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('callbackUrl') || document.referrer.includes('accounts.google.com')) {
+        router.push('/dashboard');
+      }
+    }
+  }, [session, status, router]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

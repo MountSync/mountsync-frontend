@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import DashboardSidebar from "../../components/DashboardSidebar";
 import DashboardTopNav from "../../components/DashboardTopNav";
@@ -8,6 +8,24 @@ import DashboardTopNav from "../../components/DashboardTopNav";
 export default function Settings() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('general');
+  const [userImage, setUserImage] = useState('');
+  const [userName, setUserName] = useState('User');
+  const [userEmail, setUserEmail] = useState('');
+  const [userInitials, setUserInitials] = useState('U');
+
+  useEffect(() => {
+    const userData = localStorage.getItem('mountsync_user');
+    if (userData) {
+      const user = JSON.parse(userData);
+      if (user.image) setUserImage(user.image);
+      if (user.name) {
+        setUserName(user.name);
+        const initials = user.name.split(' ').map((n: string) => n[0]).join('').toUpperCase().slice(0, 2);
+        setUserInitials(initials);
+      }
+      if (user.email) setUserEmail(user.email);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
@@ -175,9 +193,19 @@ export default function Settings() {
               <h2 className="mb-4 text-lg font-bold text-gray-900 dark:text-white">Profile Information</h2>
               <div className="space-y-4">
                 <div className="flex items-center gap-6">
-                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-blue-600 text-2xl font-bold text-white">
-                    JD
-                  </div>
+                  {userImage ? (
+                    <Image 
+                      src={userImage} 
+                      alt={userName}
+                      width={80}
+                      height={80}
+                      className="rounded-full"
+                    />
+                  ) : (
+                    <div className="flex h-20 w-20 items-center justify-center rounded-full bg-blue-600 text-2xl font-bold text-white">
+                      {userInitials}
+                    </div>
+                  )}
                   <div>
                     <button className="rounded-lg border-2 border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 transition-all hover:border-blue-500 hover:bg-blue-50 dark:border-gray-700 dark:text-gray-300 dark:hover:border-blue-500 dark:hover:bg-blue-950">
                       Change Photo
@@ -192,7 +220,7 @@ export default function Settings() {
                     </label>
                     <input
                       type="text"
-                      defaultValue="John"
+                      defaultValue={userName.split(' ')[0] || ''}
                       className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
                     />
                   </div>
@@ -202,7 +230,7 @@ export default function Settings() {
                     </label>
                     <input
                       type="text"
-                      defaultValue="Doe"
+                      defaultValue={userName.split(' ')[1] || ''}
                       className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
                     />
                   </div>
@@ -213,7 +241,7 @@ export default function Settings() {
                   </label>
                   <input
                     type="email"
-                    defaultValue="john@example.com"
+                    defaultValue={userEmail}
                     className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
                   />
                 </div>

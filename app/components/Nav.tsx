@@ -15,8 +15,8 @@ export default function Nav() {
               <Image 
                 src="/mountlogo.png" 
                 alt="MountSync Logo" 
-                width={40} 
-                height={40}
+                width={170} 
+                height={70}
                 className="object-contain"
               />
             </div>

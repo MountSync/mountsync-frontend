@@ -38,8 +38,8 @@ export default function Footer() {
               Legal
             </h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">Privacy Policy</a></li>
-              <li><a href="#" className="text-sm text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">Terms of Service</a></li>
+              <li><a href="/privacy-policy" className="text-sm text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">Privacy Policy</a></li>
+              <li><a href="/terms-of-service" className="text-sm text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">Terms of Service</a></li>
             </ul>
           </div>
         </div>

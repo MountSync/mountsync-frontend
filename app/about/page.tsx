@@ -217,7 +217,7 @@ export default function About() {
               We're a small but mighty team of engineers, designers, and merchant advocates. If you're passionate about solving real problems for real businesses, we'd love to hear from you.
             </p>
             <a 
-              href="/contact" 
+              href="/careers" 
               className="inline-block rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-4 text-base font-bold text-white shadow-2xl shadow-blue-500/50 transition-all hover:shadow-blue-500/60 hover:scale-105"
             >
               Get in Touch

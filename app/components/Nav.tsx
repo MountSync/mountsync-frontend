@@ -6,6 +6,7 @@ import Image from "next/image";
 export default function Nav() {
   const [featuresOpen, setFeaturesOpen] = useState(false);
   const [integrationsOpen, setIntegrationsOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/50 bg-white/80 backdrop-blur-xl dark:border-slate-800/50 dark:bg-gray-950/80">
@@ -15,8 +16,8 @@ export default function Nav() {
               <Image 
                 src="/mountlogo.png" 
                 alt="MountSync Logo" 
-                width={170} 
-                height={70}
+                width={40} 
+                height={40}
                 className="object-contain"
               />
             </div>
@@ -25,6 +26,7 @@ export default function Nav() {
             </span>
           </a>
           
+          {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 md:flex">
             {/* Features Dropdown */}
             <div 
@@ -129,7 +131,102 @@ export default function Nav() {
               Sign Up
             </a>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="flex items-center justify-center rounded-lg p-2 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 md:hidden"
+          >
+            {mobileMenuOpen ? (
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </nav>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="border-t border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950 md:hidden">
+            <div className="space-y-1 px-6 py-4">
+              {/* Features Section */}
+              <div className="space-y-1">
+                <button
+                  onClick={() => setFeaturesOpen(!featuresOpen)}
+                  className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800"
+                >
+                  Features
+                  <svg 
+                    className={`h-5 w-5 transition-transform ${featuresOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {featuresOpen && (
+                  <div className="ml-4 space-y-1">
+                    <a href="/features/inventory-syncing" className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800">
+                      Inventory Syncing
+                    </a>
+                    <a href="/features/product-syncing" className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800">
+                      Product Syncing
+                    </a>
+                    <a href="/features/order-syncing" className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800">
+                      Order Syncing
+                    </a>
+                  </div>
+                )}
+              </div>
+
+              {/* Integrations Section */}
+              <div className="space-y-1">
+                <button
+                  onClick={() => setIntegrationsOpen(!integrationsOpen)}
+                  className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800"
+                >
+                  Integrations
+                  <svg 
+                    className={`h-5 w-5 transition-transform ${integrationsOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {integrationsOpen && (
+                  <div className="ml-4 space-y-1">
+                    <a href="/integrations/shopify" className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800">
+                      Shopify
+                    </a>
+                    <a href="/integrations/woocommerce" className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800">
+                      WooCommerce
+                    </a>
+                  </div>
+                )}
+              </div>
+
+              <a href="#blog" className="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                Blog
+              </a>
+              <a href="/contact" className="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                Contact
+              </a>
+              <a href="/login" className="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+                Login
+              </a>
+              <a href="/signup" className="mt-4 block rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 text-center text-base font-semibold text-white shadow-lg">
+                Sign Up
+              </a>
+            </div>
+          </div>
+        )}
       </header>
   );
 }

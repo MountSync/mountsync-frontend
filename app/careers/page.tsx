@@ -179,14 +179,14 @@ export default function Careers() {
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: '🏥', title: 'Health Insurance', description: 'Comprehensive medical, dental, and vision coverage' },
+              // { icon: '🏥', title: 'Health Insurance', description: 'Comprehensive medical, dental, and vision coverage' },
               { icon: '💰', title: 'Competitive Salary', description: 'Top-of-market compensation plus equity' },
               { icon: '🏖️', title: 'Unlimited PTO', description: 'Take the time you need to recharge' },
-              { icon: '💻', title: 'Equipment Budget', description: '$3K to set up your perfect workspace' },
-              { icon: '📚', title: 'Learning Budget', description: '$2K annually for courses, books, and conferences' },
+              // { icon: '💻', title: 'Equipment Budget', description: '$3K to set up your perfect workspace' },
+              // { icon: '📚', title: 'Learning Budget', description: '$2K annually for courses, books, and conferences' },
               { icon: '🏠', title: 'Remote Work', description: 'Work from anywhere in the US' },
               { icon: '👶', title: 'Parental Leave', description: '16 weeks fully paid parental leave' },
-              { icon: '🎉', title: 'Team Events', description: 'Annual all-hands and quarterly offsites' }
+              // { icon: '🎉', title: 'Team Events', description: 'Annual all-hands and quarterly offsites' }
             ].map((perk, idx) => (
               <div 
                 key={idx}
@@ -263,7 +263,7 @@ export default function Careers() {
                   </div>
                   <div>
                     <a
-                      href="/contact"
+                      href="/apply"
                       className="inline-block rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-3 text-base font-bold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
                     >
                       Apply Now
